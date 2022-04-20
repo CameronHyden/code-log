@@ -1,16 +1,18 @@
 import React from "react";
+import CodeCard from "../CodeCard/CodeCard";
 
-const CodeCardContainer = ({ codeCard }) => {
+const CodeCardContainer = ({ codeLog }) => {
   return (
     <div>
-      {codeCard.map((code) => {
+      {codeLog.map((code) => {
         return (
-          <codeCard
+          <CodeCard
             key={code.id}
+            id={code.id}
             title={code.title}
             problemImage={code.problemImage}
             summary={code.summary}
-            solutionPic={code.solutionPic}
+            solutionPic={code.solutionImage}
             solutionSummary={code.solutionSummary}
           />
         );

@@ -1,7 +1,7 @@
 import React from "react";
 
 const CodeCard = ({
-  key,
+  id,
   title,
   problemImage,
   summary,
@@ -10,11 +10,13 @@ const CodeCard = ({
 }) => {
   return (
     <div>
-      <h1>{key}</h1>
+      <h1>{id}</h1>
       <h2>{title}</h2>
-      <img src={problemImage} alt="" />
+      {/* <img src={problemImage} alt="" /> */}
+      <h3>{problemImage}</h3>
       <p>{summary}</p>
-      <img src={solutionPic} alt="" />
+      <h3>{solutionPic} </h3>
+      {/* <img src={solutionPic} alt="" /> */}
       <p>{solutionSummary}</p>
     </div>
   );
