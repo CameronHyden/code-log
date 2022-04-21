@@ -1,0 +1,6 @@
+.codeCardContainer {
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}

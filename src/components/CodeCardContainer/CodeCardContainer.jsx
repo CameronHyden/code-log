@@ -1,9 +1,10 @@
 import React from "react";
 import CodeCard from "../CodeCard/CodeCard";
+import "./CodeCardContainer.scss";
 
 const CodeCardContainer = ({ codeLog }) => {
   return (
-    <div>
+    <div className="codeCardContainer">
       {codeLog.map((code) => {
         return (
           <CodeCard

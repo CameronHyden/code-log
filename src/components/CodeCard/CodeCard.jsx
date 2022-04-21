@@ -1,4 +1,5 @@
 import React from "react";
+import "./CodeCard.scss";
 
 const CodeCard = ({
   id,
@@ -9,7 +10,7 @@ const CodeCard = ({
   solutionSummary,
 }) => {
   return (
-    <div>
+    <div className="codeCard">
       <h1>{id}</h1>
       <h2>{title}</h2>
       {/* <img src={problemImage} alt="" /> */}

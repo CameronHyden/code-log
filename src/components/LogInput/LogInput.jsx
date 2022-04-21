@@ -1,21 +1,50 @@
 import React from "react";
 import "./LogInput.scss";
 
-const LogInput = ({ handleInput }) => {
+const LogInput = ({ handleInput, saveButton, state }) => {
   return (
     <div className="logInput">
       <label htmlFor="title">title</label>
-      <input type="text" name="title" onInput={handleInput} />
-      <label htmlFor="Problem">Problem</label>
-      <input type="text" name="Problem" onInput={handleInput} />
-      <label htmlFor="summary">summary</label>
-      <input type="text" name="summary" onInput={handleInput} />
-      <label htmlFor="solution">solution</label>
-      <input type="text" name="solution" onInput={handleInput} />
-      <label htmlFor="solutionSummary">solutionSummary</label>
-      <input type="text" name="solutionSummary" onInput={handleInput} />
+      <input
+        type="text"
+        name="title"
+        onChange={handleInput}
+        value={state.title}
+      />
 
-      <button>SAVE</button>
+      <label htmlFor="problemImage">ProblemImage</label>
+      <input
+        type="text"
+        name="problemImage"
+        onChange={handleInput}
+        value={state.problemImage}
+      />
+
+      <label htmlFor="summary">summary</label>
+      <input
+        type="text"
+        name="summary"
+        onChange={handleInput}
+        value={state.summary}
+      />
+
+      <label htmlFor="solutionImage">solutionImage</label>
+      <input
+        type="text"
+        name="solutionImage"
+        onChange={handleInput}
+        value={state.solutionImage}
+      />
+
+      <label htmlFor="solutionSummary">solutionSummary</label>
+      <input
+        type="text"
+        name="solutionSummary"
+        onChange={handleInput}
+        value={state.solutionSummary}
+      />
+
+      <button onClick={saveButton}>SAVE</button>
     </div>
   );
 };
