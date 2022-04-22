@@ -3,9 +3,10 @@ import CodeCardContainer from "./components/CodeCardContainer/CodeCardContainer"
 import LogInput from "./components/LogInput/LogInput";
 import "./App.css";
 import DeleteField from "./components/DeleteField/DeleteField";
+import { addNewLog, deleteById, fetchCodeLogs } from "./api.js";
 
 const App = () => {
-  const [logs, setLogs] = useState([]);
+  const [codeEntry, setCodeEntry] = useState([]);
   const [idText, setIdText] = useState("");
   const [input, setInput] = useState({
     title: "",
@@ -15,17 +16,9 @@ const App = () => {
     solutionSummary: "",
   });
 
-  const url = "https://my-code-solution-tracker.ey.r.appspot.com/codeLog";
-
-  const fetchCodeLogs = async () => {
-    const res = await fetch(url);
-    const data = await res.json();
-    setLogs(data);
-  };
-
   useEffect(() => {
-    fetchCodeLogs(input, idText);
-  }, [input, idText]);
+    handleFetch();
+  }, []);
 
   const handleInput = (event) => {
     const value = event.target.value;
@@ -34,34 +27,38 @@ const App = () => {
       [event.target.name]: value,
     });
   };
-  const addNewLog = (e) => {
-    e.preventDefault();
-    fetch(url, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(input),
-    });
-  };
+
   const handleIdText = (event) => {
     const input = event.target.value;
     setIdText(input);
   };
-  const deleteById = () => {
-    fetch(url + "/" + idText, {
-      method: "DELETE",
-      headers: { "content-type": "application/json" },
-    }).then((response) => response.text());
+
+  const handleAddNewLog = async () => {
+    await addNewLog(input);
+    handleFetch();
+  };
+
+  const handleDeleteById = async () => {
+    await deleteById(idText);
+    handleFetch();
+  };
+
+  const handleFetch = () => {
+    (async () => {
+      const data = await fetchCodeLogs();
+      setCodeEntry(data);
+    })();
   };
 
   return (
     <div className="App">
-      <CodeCardContainer codeLog={logs} />
+      <CodeCardContainer codeEntry={codeEntry} />
       <LogInput
         handleInput={handleInput}
-        saveButton={addNewLog}
+        saveButton={handleAddNewLog}
         state={input}
       />
-      <DeleteField handleIdText={handleIdText} deleteById={deleteById} />
+      <DeleteField handleIdText={handleIdText} deleteById={handleDeleteById} />
     </div>
   );
 };

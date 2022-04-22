@@ -2,10 +2,10 @@ import React from "react";
 import CodeCard from "../CodeCard/CodeCard";
 import "./CodeCardContainer.scss";
 
-const CodeCardContainer = ({ codeLog }) => {
+const CodeCardContainer = ({ codeEntry }) => {
   return (
     <div className="codeCardContainer">
-      {codeLog.map((code) => {
+      {codeEntry.map((code) => {
         return (
           <CodeCard
             key={code.id}
