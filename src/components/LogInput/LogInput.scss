@@ -1,6 +1,20 @@
-.logInput {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.logInput-container {
+  background-color: #2d3436;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  .logInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
 }
