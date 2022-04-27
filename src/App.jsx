@@ -38,6 +38,7 @@ const App = () => {
   const handleAddNewLog = async () => {
     await addNewLog(input);
     handleFetch();
+    console.log(input);
   };
 
   const handleDeleteById = async () => {
@@ -59,6 +60,12 @@ const App = () => {
     setAddSection(false);
   };
 
+  const loadFile = (event) => {
+    const image = document.getElementById("problemImageOutput");
+    image.src = URL.createObjectURL(event.target.files[0]);
+    setInput.problemImage(image.src);
+  };
+
   return (
     <div className="App">
       <CodeCardContainer codeEntry={codeEntry} />
@@ -69,6 +76,7 @@ const App = () => {
           saveButton={handleAddNewLog}
           state={input}
           handleAddSectionState={closeAddSection}
+          loadFile={loadFile}
         />
       )}
       <DeleteField handleIdText={handleIdText} deleteById={handleDeleteById} />

@@ -1,7 +1,15 @@
+@use "../../styles/variables" as *;
+
 .codeCardContainer {
   display: grid;
   gap: 2rem;
   justify-items: center;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   border: 2px red solid;
 }
+
+@media only screen and (min-width: $desktop-breakpoint) {
+  .codeCardContainer {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+} ;
