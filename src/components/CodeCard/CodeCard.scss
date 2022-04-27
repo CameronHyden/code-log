@@ -1,4 +1,7 @@
+@use "../../styles/variables" as *;
 .codeCard {
-  background-color: rgb(181, 250, 255);
   border-radius: 10px;
+  background-color: $secondary-color;
+  padding: 0.5rem;
+  color: $primary-color-font;
 }

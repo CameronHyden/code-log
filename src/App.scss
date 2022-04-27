@@ -1,0 +1,33 @@
+@use "./styles/variables" as *;
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $primary-color;
+  overflow: hidden;
+
+  &__userModifiers {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: $secondary-color;
+    margin-top: 1rem;
+    padding: 1rem;
+    box-shadow: $primary-color 0px 30px 60px -12px inset,
+      $primary-color 0px 18px 36px -18px inset;
+  }
+}
+@media only screen and (min-width: $desktop-breakpoint) {
+  .app {
+    display: flex;
+    flex-direction: row;
+
+    &__userModifiers {
+      display: flex;
+      flex-direction: column;
+      max-height: 17rem;
+    }
+  }
+}
