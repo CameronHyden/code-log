@@ -6,8 +6,6 @@ import DeleteField from "./components/DeleteField/DeleteField";
 import { addNewLog, deleteById, fetchCodeLogs } from "./api.js";
 import Button from "./components/Button/Button";
 import NavBar from "./components/NavBar/NavBar";
-import { useMediaQuery } from "react-responsive";
-import useWindowSize from "./hooks/useWindowSize";
 
 const App = () => {
   const [addSection, setAddSection] = useState(false);
@@ -20,6 +18,7 @@ const App = () => {
     solutionImage: "",
     solutionSummary: "",
   });
+  // const [image, setImage] = useState("");
 
   useEffect(() => {
     handleFetch(codeEntry);
@@ -63,13 +62,20 @@ const App = () => {
     setAddSection(false);
   };
 
-  const loadFile = (event) => {
-    const image = document.getElementById("problemImageOutput");
-    image.src = URL.createObjectURL(event.target.files[0]);
-    setInput.problemImage(image.src);
+  const onImageChange = (e) => {
+    const [file] = e.target.files;
+    const reader = new FileReader();
+    reader.onloadend = function () {
+      const result = reader.result;
+      setInput((prevState) => {
+        let clonedState = { ...prevState.input };
+        input.problemImage = result;
+        setInput(clonedState);
+        console.log(input);
+      });
+    };
+    reader.readAsDataURL(file);
   };
-
-  // const isDesktop = useWindowSize(1024);
 
   return (
     <div className="app">
@@ -88,7 +94,7 @@ const App = () => {
             saveButton={handleAddNewLog}
             state={input}
             handleAddSectionState={closeAddSection}
-            loadFile={loadFile}
+            onImageChange={onImageChange}
           />
         )}
         <DeleteField
