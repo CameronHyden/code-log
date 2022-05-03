@@ -4,8 +4,8 @@ import LogInput from "./components/LogInput/LogInput";
 import "./App.scss";
 import { addNewLog, deleteById, fetchCodeLogs } from "./api.js";
 import NavBar from "./components/NavBar/NavBar";
-import TextArea from "./components/TextArea/TextArea";
-import ResourcesSection from "./components/ResourcesSection/ResourcesSection";
+import Footer from "./components/Footer/Footer";
+import Layout from "./components/Layout /Layout";
 
 const App = () => {
   const [addSection, setAddSection] = useState(false);
@@ -75,7 +75,7 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+    <Layout>
       <NavBar
         handleDeleteById={handleDeleteById}
         handleIdText={handleIdText}
@@ -91,11 +91,8 @@ const App = () => {
         />
       )}
       <CodeCardContainer codeEntry={codeEntry} />
-      <div className="footer">
-        <TextArea />
-        <ResourcesSection />
-      </div>
-    </div>
+      <Footer />
+    </Layout>
   );
 };
 

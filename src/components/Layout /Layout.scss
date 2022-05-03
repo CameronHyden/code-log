@@ -1,0 +1,14 @@
+@use "../../styles/variables" as *;
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $primary-color;
+  overflow: hidden;
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    rgb(75, 74, 74) 2px,
+    transparent 0
+  );
+  background-size: 50px 50px;
+}

@@ -1,0 +1,16 @@
+@use "../../styles/variables" as *;
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media only screen and (min-width: $desktop-breakpoint) {
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
