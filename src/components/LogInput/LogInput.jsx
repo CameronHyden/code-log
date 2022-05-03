@@ -6,7 +6,7 @@ const LogInput = ({
   saveButton,
   state,
   handleAddSectionState,
-  onImageChange,
+  // onImageChange,
 }) => {
   return (
     <div className="logInput-container">
@@ -20,10 +20,10 @@ const LogInput = ({
         />
         <label htmlFor="problemImage">ProblemImage</label>
         <input
-          type="file"
-          accept="image/png, image/jpeg"
+          type="text"
+          // accept="image/png, image/jpeg"
           name="problemImage"
-          onChange={onImageChange}
+          onChange={handleInput}
           value={state.problemImage}
         />
         <label htmlFor="summary">summary</label>
