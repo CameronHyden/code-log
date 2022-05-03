@@ -22,7 +22,6 @@
 @media only screen and (min-width: $desktop-breakpoint) {
   .app {
     display: flex;
-    flex-direction: row;
 
     &__userModifiers {
       display: flex;

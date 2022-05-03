@@ -1,7 +1,36 @@
 @use "../../styles/variables" as *;
 .codeCard {
-  border-radius: 10px;
-  background-color: $secondary-color;
-  padding: 0.5rem;
-  color: $primary-color-font;
+  // border-radius: 10px;
+  // background-color: $secondary-color;
+  // padding: 0.5rem;
+  // color: $primary-color-font;
+  background: #ffc;
+  padding: 1em;
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  transform: rotate(-6deg);
+  transition: transform 0.15s linear;
+}
+.codeCard:nth-child(even) {
+  transform: rotate(4deg);
+  position: relative;
+  top: 5px;
+  background: #cfc;
+}
+.codeCard:nth-child(3n) {
+  transform: rotate(-3deg);
+  position: relative;
+  top: -5px;
+  background: #ccf;
+}
+.codeCard:nth-child(5n) {
+  transform: rotate(5deg);
+  position: relative;
+  top: -10px;
+}
+.codeCard:hover,
+.codeCard:focus {
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  transform: scale(1.25);
+  position: relative;
+  z-index: 5;
 }
