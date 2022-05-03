@@ -1,6 +1,8 @@
 @use "../../styles/variables" as *;
 .textArea {
   background-color: $secondary-color;
+  box-sizing: border-box;
+  max-width: 80%;
 }
 
 @media only screen and (min-width: $desktop-breakpoint) {

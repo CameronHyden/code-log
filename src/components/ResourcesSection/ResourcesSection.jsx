@@ -6,8 +6,8 @@ const ResourcesSection = () => {
       <div className="resourcesSection__header">
         <h3>RESOURCES</h3>
       </div>
-      <div className="resourcesSection__links">
-        <ul>
+      <div>
+        <ul className="resourcesSection__links">
           <li>
             <a
               className="resourcesSection__link"

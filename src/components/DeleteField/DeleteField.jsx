@@ -1,11 +1,18 @@
-import React from "react";
+import "./DeleteField.scss";
 
 const DeleteField = ({ handleIdText, deleteById }) => {
   return (
-    <div>
-      <label htmlFor="idInput">enter an ID please </label>
-      <input type="text" name="idInput" onChange={handleIdText} />
-      <button onClick={deleteById}>DELETE</button>
+    <div className="deleteField">
+      <label htmlFor="idInput">Enter an ID please </label>
+      <input
+        className="deleteField__input"
+        type="text"
+        name="idInput"
+        onChange={handleIdText}
+      />
+      <button className="deleteField__button" onClick={deleteById}>
+        DELETE
+      </button>
     </div>
   );
 };

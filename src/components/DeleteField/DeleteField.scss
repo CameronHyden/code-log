@@ -1,0 +1,14 @@
+@use "../../styles/variables" as *;
+
+.deleteField {
+  &__button {
+    background-color: $primary-color-font;
+    color: white;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__input {
+    margin: 0.2rem;
+  }
+}
