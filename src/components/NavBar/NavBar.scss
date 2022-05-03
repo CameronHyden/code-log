@@ -1,11 +1,28 @@
+@use "../../styles/variables" as *;
+
 .navbar {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column-reverse;
   align-items: center;
+
+  // .navbar__left {
+  // }
+  // .navbar__right {
+  // }
 }
-.navbar__left {
-  margin-left: 2rem;
-}
-.navbar__right {
-  margin-right: 2rem;
+
+@media only screen and (min-width: $desktop-breakpoint) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    .navbar__left {
+      margin-left: 4rem;
+    }
+    .navbar__right {
+      margin-right: 5rem;
+    }
+  }
 }

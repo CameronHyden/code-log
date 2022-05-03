@@ -4,6 +4,8 @@ import LogInput from "./components/LogInput/LogInput";
 import "./App.scss";
 import { addNewLog, deleteById, fetchCodeLogs } from "./api.js";
 import NavBar from "./components/NavBar/NavBar";
+import TextArea from "./components/TextArea/TextArea";
+import ResourcesSection from "./components/ResourcesSection/ResourcesSection";
 
 const App = () => {
   const [addSection, setAddSection] = useState(false);
@@ -88,8 +90,11 @@ const App = () => {
           onImageChange={onImageChange}
         />
       )}
-
       <CodeCardContainer codeEntry={codeEntry} />
+      <div className="footer">
+        <TextArea />
+        <ResourcesSection />
+      </div>
     </div>
   );
 };

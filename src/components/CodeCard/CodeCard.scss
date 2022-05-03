@@ -1,10 +1,6 @@
 @use "../../styles/variables" as *;
 .codeCard {
-  // border-radius: 10px;
-  // background-color: $secondary-color;
-  // padding: 0.5rem;
-  // color: $primary-color-font;
-  background: #ffc;
+  background: #f9b9ab;
   padding: 1em;
   box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
   transform: rotate(-6deg);
@@ -14,13 +10,13 @@
   transform: rotate(4deg);
   position: relative;
   top: 5px;
-  background: #cfc;
+  background: #adcbf9;
 }
 .codeCard:nth-child(3n) {
   transform: rotate(-3deg);
   position: relative;
   top: -5px;
-  background: #ccf;
+  background: #f9e575;
 }
 .codeCard:nth-child(5n) {
   transform: rotate(5deg);

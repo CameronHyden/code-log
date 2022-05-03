@@ -1,7 +1,7 @@
-import React from "react";
+import "./ResourcesSection.scss";
 
 const ResourcesSection = () => {
-  return <div>ResourcesSection</div>;
+  return <div className="resourcesSection">ResourcesSection</div>;
 };
 
 export default ResourcesSection;
