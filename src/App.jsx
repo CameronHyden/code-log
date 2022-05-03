@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import CodeCardContainer from "./components/CodeCardContainer/CodeCardContainer";
 import LogInput from "./components/LogInput/LogInput";
 import "./App.scss";
-import DeleteField from "./components/DeleteField/DeleteField";
 import { addNewLog, deleteById, fetchCodeLogs } from "./api.js";
-import Button from "./components/Button/Button";
 import NavBar from "./components/NavBar/NavBar";
 
 const App = () => {
@@ -32,6 +30,11 @@ const App = () => {
     });
   };
 
+  const handleDeleteById = async () => {
+    await deleteById(idText);
+    handleFetch();
+  };
+
   const handleIdText = (event) => {
     const input = event.target.value;
     setIdText(input);
@@ -43,11 +46,6 @@ const App = () => {
     console.log(input);
   };
 
-  const handleDeleteById = async () => {
-    await deleteById(idText);
-    handleFetch();
-  };
-
   const handleFetch = () => {
     (async () => {
       const data = await fetchCodeLogs();
@@ -55,9 +53,6 @@ const App = () => {
     })();
   };
 
-  const renderAddSection = () => {
-    setAddSection(true);
-  };
   const closeAddSection = () => {
     setAddSection(false);
   };
@@ -79,29 +74,21 @@ const App = () => {
 
   return (
     <div className="app">
-      <div className="app__userModifiers">
-        <NavBar />
-        <Button
-          handleAddSectionState={renderAddSection}
-          buttonText="ADD"
-          buttonName="button"
-          labelName="button"
-          labelText="Log your code"
+      <NavBar
+        handleDeleteById={handleDeleteById}
+        handleIdText={handleIdText}
+        setAddSection={setAddSection}
+      />
+      {addSection && (
+        <LogInput
+          handleInput={handleInput}
+          saveButton={handleAddNewLog}
+          state={input}
+          handleAddSectionState={closeAddSection}
+          onImageChange={onImageChange}
         />
-        {addSection && (
-          <LogInput
-            handleInput={handleInput}
-            saveButton={handleAddNewLog}
-            state={input}
-            handleAddSectionState={closeAddSection}
-            onImageChange={onImageChange}
-          />
-        )}
-        <DeleteField
-          handleIdText={handleIdText}
-          deleteById={handleDeleteById}
-        />
-      </div>
+      )}
+
       <CodeCardContainer codeEntry={codeEntry} />
     </div>
   );

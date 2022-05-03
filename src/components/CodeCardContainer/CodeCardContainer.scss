@@ -5,12 +5,11 @@
   gap: 2rem;
   justify-items: center;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  margin-top: 1rem;
+  margin-top: 4rem;
 }
 
 @media only screen and (min-width: $desktop-breakpoint) {
   .codeCardContainer {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin-right: 2rem;
   }
 } ;

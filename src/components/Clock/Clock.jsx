@@ -1,7 +1,7 @@
-import React from "react";
+import "./Clock.scss";
 
 const Clock = () => {
-  return <div>Clock</div>;
+  return <div className="clock">Clock</div>;
 };
 
 export default Clock;

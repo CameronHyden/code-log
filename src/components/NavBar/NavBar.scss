@@ -1,3 +1,11 @@
 .navbar {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar__left {
+  margin-left: 2rem;
+}
+.navbar__right {
+  margin-right: 2rem;
 }
