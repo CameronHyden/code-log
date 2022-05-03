@@ -18,11 +18,37 @@ const App = () => {
     solutionImage: "",
     solutionSummary: "",
   });
-  // const [image, setImage] = useState("");
+
+  const [clockHands, setClockHands] = useState({
+    secondHand: 0,
+    minuteHand: 0,
+    hourHand: 0,
+  });
+
+  const setTime = () => {
+    const currentDate = new Date();
+    let second = currentDate.getSeconds() / 60;
+    let minute = (second + currentDate.getMinutes()) / 60;
+    let hour = (minute + currentDate.getHours()) / 12;
+
+    setClockHands((prevState) => {
+      let clonedClockHands = { ...prevState.clonedClockHands };
+      clonedClockHands.secondHand = second;
+      clonedClockHands.minuteHand = minute;
+      clonedClockHands.hourHand = hour;
+      return clonedClockHands;
+    });
+  };
 
   useEffect(() => {
     handleFetch(codeEntry);
   }, [codeEntry]);
+
+  useEffect(() => {
+    setInterval(() => {
+      setTime();
+    }, 1000);
+  });
 
   const handleInput = (event) => {
     const value = event.target.value;
@@ -80,6 +106,9 @@ const App = () => {
         handleDeleteById={handleDeleteById}
         handleIdText={handleIdText}
         setAddSection={setAddSection}
+        secondHand={clockHands.secondHand}
+        minuteHand={clockHands.minuteHand}
+        hourHand={clockHands.hourHand}
       />
       {addSection && (
         <LogInput

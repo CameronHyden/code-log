@@ -5,7 +5,14 @@ import Button from "../Button/Button";
 import DeleteField from "../DeleteField/DeleteField";
 import Clock from "../Clock/Clock";
 
-const NavBar = ({ handleDeleteById, handleIdText, setAddSection }) => {
+const NavBar = ({
+  handleDeleteById,
+  handleIdText,
+  setAddSection,
+  secondHand,
+  minuteHand,
+  hourHand,
+}) => {
   const renderAddSection = () => {
     setAddSection(true);
   };
@@ -28,7 +35,14 @@ const NavBar = ({ handleDeleteById, handleIdText, setAddSection }) => {
         />
       </div>
       <div className="navbar__right">
-        <Clock />
+        <Clock
+          // hourRatio={hourRatio}
+          // secondRatio={secondRatio}
+          // minuteRatio={minuteRatio}
+          secondHand={secondHand}
+          minuteHand={minuteHand}
+          hourHand={hourHand}
+        />
       </div>
     </div>
   );

@@ -1,5 +1,149 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 .clock {
-  border: 2px solid red;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: -8px 8px 15px rgba(225, 225, 225, 0.05),
+    20px 20px 20px rgba(0, 0, 0, 0.2),
+    inset -8px -8px 15px rgba(225, 225, 225, 0.05),
+    inset 20px 20px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  &__secondHand,
+  &__minuteHand,
+  &__hourHand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: black;
+    transform-origin: bottom;
+    z-index: 10;
+  }
+  &__secondHand {
+    width: 3px;
+    height: 40%;
+    background-color: red;
+  }
+  &__minuteHand {
+    width: 5px;
+    height: 35%;
+    background-color: black;
+  }
+  &__hourHand {
+    width: 8px;
+    height: 25%;
+    background-color: black;
+  }
+}
+.clock::after {
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 11;
+}
+
+.clock .number {
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-size: 1rem;
+  padding: 18px;
+}
+
+.number::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 10px;
+  background-color: black;
+}
+
+.clock .number1 {
+  --rotation: 30deg;
+}
+.clock .number2 {
+  --rotation: 60deg;
+}
+.clock .number3 {
+  --rotation: 90deg;
+}
+.clock .number4 {
+  --rotation: 120deg;
+}
+.clock .number5 {
+  --rotation: 150deg;
+}
+.clock .number6 {
+  --rotation: 180deg;
+}
+.clock .number7 {
+  --rotation: 210deg;
+}
+.clock .number8 {
+  --rotation: 240deg;
+}
+.clock .number9 {
+  --rotation: 270deg;
+}
+.clock .number10 {
+  --rotation: 300deg;
+}
+.clock .number11 {
+  --rotation: 330deg;
+}
+
+.number1 div {
+  transform: rotate(-30deg);
+}
+
+.number2 div {
+  transform: rotate(-60deg);
+}
+.number3 div {
+  transform: rotate(-90deg);
+}
+.number4 div {
+  transform: rotate(-120deg);
+}
+.number5 div {
+  transform: rotate(-150deg);
+}
+.number6 div {
+  transform: rotate(-180deg);
+}
+.number7 div {
+  transform: rotate(-210deg);
+}
+.number8 div {
+  transform: rotate(-240deg);
+}
+.number9 div {
+  transform: rotate(-270deg);
+}
+.number10 div {
+  transform: rotate(-300deg);
+}
+.number11 div {
+  transform: rotate(-330deg);
 }

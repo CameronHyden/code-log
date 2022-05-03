@@ -1,3 +1,4 @@
-// .textArea {
-//   border: 3px solid red;
-// }
+@use "../../styles/variables" as *;
+.textArea {
+  background-color: $secondary-color;
+}
