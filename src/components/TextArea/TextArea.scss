@@ -2,3 +2,9 @@
 .textArea {
   background-color: $secondary-color;
 }
+
+@media only screen and (min-width: $desktop-breakpoint) {
+  .textArea {
+    margin-left: 4rem;
+  }
+}

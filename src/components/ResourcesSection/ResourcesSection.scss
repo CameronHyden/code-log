@@ -1,3 +1,29 @@
-// .resourcesSection {
-//   border: 3px solid red;
-// }
+@use "../../styles/variables" as *;
+.resourcesSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+  background-color: $secondary-color;
+  &__header {
+    justify-content: center;
+  }
+  &__links {
+    margin: 1rem;
+  }
+  &__link {
+    color: $primary-color-font;
+    text-decoration: none;
+    margin-right: 1rem;
+
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}
+@media only screen and (min-width: $desktop-breakpoint) {
+  .resourcesSection {
+    margin-right: 4rem;
+  }
+}
