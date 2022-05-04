@@ -5,6 +5,7 @@
   align-items: center;
   flex-direction: column;
   background-color: $secondary-color;
+  border: 1px solid rgb(118, 118, 118);
   &__header {
     justify-content: center;
   }
@@ -16,7 +17,7 @@
   &__link {
     color: $primary-color-font;
     text-decoration: none;
-    margin-right: 1rem;
+    margin-right: 3rem;
 
     &:hover {
       font-weight: 600;

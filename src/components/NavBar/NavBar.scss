@@ -33,3 +33,14 @@
     }
   }
 }
+@media only screen and (min-width: $large-desktop-breakpoint) {
+  .navbar {
+    .navbar__left {
+      margin-left: 8rem;
+      padding: 1rem;
+    }
+    .navbar__right {
+      margin-right: 10rem;
+    }
+  }
+}
