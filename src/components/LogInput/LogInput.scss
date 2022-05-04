@@ -1,12 +1,17 @@
 @use "../../styles/variables" as *;
 .logInput-container {
-  background-color: #2d3436;
+  background-color: $primary-color;
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    rgb(75, 74, 74) 2px,
+    transparent 0
+  );
+  background-size: 50px 50px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 5;
   z-index: 11;
   .logInput {
     display: flex;

@@ -44,6 +44,16 @@
     background-color: black;
   }
 }
+.number::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 10px;
+  background-color: black;
+}
 .clock::after {
   content: "";
   height: 30px;
@@ -66,17 +76,6 @@
   transform: rotate(var(--rotation));
   font-size: 1rem;
   padding: 18px;
-}
-
-.number::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 5px;
-  height: 10px;
-  background-color: black;
 }
 
 .clock .number1 {

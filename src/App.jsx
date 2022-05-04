@@ -41,8 +41,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    handleFetch(codeEntry);
-  }, [codeEntry]);
+    handleFetch();
+  }, []);
 
   useEffect(() => {
     setInterval(() => {
@@ -74,11 +74,9 @@ const App = () => {
     console.log(input);
   };
 
-  const handleFetch = () => {
-    (async () => {
-      const data = await fetchCodeLogs();
-      setCodeEntry(data);
-    })();
+  const handleFetch = async () => {
+    const data = await fetchCodeLogs();
+    setCodeEntry(data);
   };
 
   const closeAddSection = () => {
