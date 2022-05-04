@@ -23,5 +23,23 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    &__summary {
+      width: 205px;
+      height: 80px;
+
+      margin: 0.5rem;
+    }
+    &__button {
+      background-color: $secondary-color;
+      color: $primary-color-font;
+      margin-top: 1rem;
+      padding: 0.5rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &__input {
+      margin: 0.5rem;
+    }
   }
 }
