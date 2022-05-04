@@ -60,7 +60,8 @@ const App = () => {
 
   const handleDeleteById = async () => {
     await deleteById(idText);
-    handleFetch();
+    const data = await fetchCodeLogs();
+    setCodeEntry(data);
   };
 
   const handleIdText = (event) => {
@@ -70,8 +71,8 @@ const App = () => {
 
   const handleAddNewLog = async () => {
     await addNewLog(input);
-    handleFetch();
-    console.log(input);
+    const data = await fetchCodeLogs();
+    setCodeEntry(data);
   };
 
   const handleFetch = async () => {
