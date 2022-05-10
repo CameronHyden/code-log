@@ -1,4 +1,5 @@
 import React from "react";
+import { Xbutton } from "../Xbutton/Xbutton";
 import "./LogInput.scss";
 
 const LogInput = ({
@@ -11,7 +12,10 @@ const LogInput = ({
   return (
     <div className="logInput-container">
       <div className="logInput">
-        <label className="input-label" htmlFor="title">Title</label>
+        <Xbutton buttonFunction={handleAddSectionState} />
+        <label className="input-label" htmlFor="title">
+          Title
+        </label>
         <input
           className="logInput__input"
           type="text"
@@ -19,7 +23,9 @@ const LogInput = ({
           onChange={handleInput}
           value={state.title}
         />
-        <label className="input-label" htmlFor="problemImage">Screenshot of the problem</label>
+        <label className="input-label" htmlFor="problemImage">
+          Screenshot of the problem
+        </label>
         <input
           className="logInput__input"
           type="text"
@@ -28,7 +34,9 @@ const LogInput = ({
           onChange={handleInput}
           value={state.problemImage}
         />
-        <label className="input-label" htmlFor="summary">Summary</label>
+        <label className="input-label" htmlFor="summary">
+          Summary
+        </label>
         <input
           className="logInput__input logInput__input--summary"
           type="text"
@@ -36,7 +44,9 @@ const LogInput = ({
           onChange={handleInput}
           value={state.summary}
         />
-        <label className="input-label" htmlFor="solutionImage">Screenshot of the solution</label>
+        <label className="input-label" htmlFor="solutionImage">
+          Screenshot of the solution
+        </label>
         <input
           className="logInput__input"
           type="text"
@@ -44,7 +54,9 @@ const LogInput = ({
           onChange={handleInput}
           value={state.solutionImage}
         />
-        <label className="input-label" htmlFor="solutionSummary">SolutionSummary</label>
+        <label className="input-label" htmlFor="solutionSummary">
+          SolutionSummary
+        </label>
         <input
           className="logInput__input logInput__input--summary"
           type="text"
@@ -54,9 +66,6 @@ const LogInput = ({
         />
         <button className="logInput__button" onClick={saveButton}>
           SAVE
-        </button>
-        <button className="logInput__button" onClick={handleAddSectionState}>
-          BACK
         </button>
       </div>
     </div>

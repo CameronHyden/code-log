@@ -1,10 +1,10 @@
-import React from "react";
+import "./Xbutton.scss";
 
-export const Xbutton = () => {
+export const Xbutton = ({ buttonFunction }) => {
   return (
-    <div className="xbutton">
+    <button className="xbutton" onClick={buttonFunction}>
       <div className="xbutton__leftX"></div>
       <div className="xbutton__rightX"></div>
-    </div>
+    </button>
   );
 };

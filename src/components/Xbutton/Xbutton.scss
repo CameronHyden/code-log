@@ -1,0 +1,28 @@
+@use "../../styles/variables" as *;
+.xbutton {
+  width: 23px;
+  height: 24px;
+  border-radius: 80%;
+  border: 1px solid $border-color;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  position: absolute;
+  top: 9px;
+  right: 24px;
+  cursor: pointer;
+  &__leftX {
+    height: 22px;
+    width: 1px;
+    background-color: $border-color;
+    transform: rotate(45deg);
+    position: absolute;
+  }
+  &__rightX {
+    height: 22px;
+    width: 1px;
+    transform: rotate(315deg);
+    background-color: $border-color;
+    position: absolute;
+  }
+}
