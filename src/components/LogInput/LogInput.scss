@@ -52,10 +52,17 @@
       &:hover {
         border: 2px solid $primary-color;
       }
-      &--summary {
-        height: 80px;
+      &--larger {
+        height: 50px;
         margin: 0.5rem;
       }
+    }
+  }
+}
+@media only screen and (min-width: $tablet-breakpoint) {
+  .logInput-container {
+    .logInput {
+      width: 320px;
     }
   }
 }

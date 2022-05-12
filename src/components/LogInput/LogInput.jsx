@@ -24,10 +24,10 @@ const LogInput = ({
           value={state.title}
         />
         <label className="input-label" htmlFor="problemImage">
-          Screenshot of the problem
+          Paste in your code snippet (problem)
         </label>
         <input
-          className="logInput__input"
+          className="logInput__input logInput__input--larger"
           type="text"
           // accept="image/png, image/jpeg"
           name="problemImage"
@@ -38,17 +38,17 @@ const LogInput = ({
           Summary
         </label>
         <input
-          className="logInput__input logInput__input--summary"
+          className="logInput__input logInput__input--larger"
           type="text"
           name="summary"
           onChange={handleInput}
           value={state.summary}
         />
         <label className="input-label" htmlFor="solutionImage">
-          Screenshot of the solution
+          Paste in your code snippet (solution)
         </label>
         <input
-          className="logInput__input"
+          className="logInput__input logInput__input--larger"
           type="text"
           name="solutionImage"
           onChange={handleInput}
@@ -58,7 +58,7 @@ const LogInput = ({
           SolutionSummary
         </label>
         <input
-          className="logInput__input logInput__input--summary"
+          className="logInput__input logInput__input--larger"
           type="text"
           name="solutionSummary"
           onChange={handleInput}
